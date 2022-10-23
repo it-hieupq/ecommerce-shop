@@ -1,0 +1,12 @@
+.btn-link:hover {
+  background: #f2f1f1;
+}
+.btn-link:hover, .btn-link:active, .btn-link:focus {
+  text-decoration: none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

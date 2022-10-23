@@ -1,0 +1,104 @@
+<div class="container my-4">
+  <div *ngIf="coupon.couponId > 0 || isAdd then display else hidden"></div>
+
+  <ng-template #display>
+
+    <div class="row">
+
+      <div class="col-12 col-sm-4">
+
+        <h4 class="mb-4">Users</h4>
+
+        <p><i>Assign this coupon for set of users</i></p>
+
+        <div class="user-list">
+
+          <div class="form-check" *ngFor="let item of users; let i = index">
+            <div *ngIf="isChecked(item.userId); then checkedField else uncheckedField"> </div>
+
+            <ng-template #checkedField>
+              <input type="checkbox" class="form-check-input" [value]="i" (change)="onCheckboxChange(item.userId,$event)" id="user-{{item.userId}}" checked>
+            </ng-template>
+
+            <ng-template #uncheckedField>
+              <input type="checkbox" class="form-check-input" [value]="i" (change)="onCheckboxChange(item.userId,$event)" id="user-{{item.userId}}">
+            </ng-template>
+
+            <label class="form-check-label" for="user-{{item.userId}}">{{item.username}}</label>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-12 col-sm-8">
+
+        <h4 class="mb-4">Coupon details</h4>
+
+        <form class="mb-5" [formGroup]="couponForm" (ngSubmit)="submitForm()">
+
+          <div *ngIf="isAdd then displayAdd else displayUpdate"> </div>
+
+          <ng-template #displayUpdate>
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">ID</label>
+              <input formControlName="couponId" type="number" class="form-control col-sm-9" id="" aria-describedby="emailHelp" [(ngModel)] = "coupon.couponId" readonly>
+            </div>
+
+            <div class="form-group row">
+              <label for="endDate" class="col-sm-3 col-form-label">End date</label>
+              <input type="text" class="form-control col-sm-9" value="{{calculateTimeLeft(coupon.endDate)}}" readonly>
+              <input formControlName="endDate" type="hidden" [(ngModel)]="coupon.endDate" id="endDate" name="endDate">
+            </div>
+          </ng-template>
+
+          <ng-template #displayAdd>
+            <div class="form-group row">
+              <label for="endDate" class="col-sm-3 col-form-label">End date (days)</label>
+              <input formControlName="endDate" type="number" [(ngModel)]="coupon.endDate" id="endDate-add" name="endDate" class="form-control col-sm-9">
+            </div>
+          </ng-template>
+
+          <div class="form-group row">
+            <label for="name" class="col-sm-3 col-form-label">Name</label>
+            <input formControlName="name" [(ngModel)]="coupon.name" type="text" class="form-control col-sm-9" id="name" name="name">
+          </div>
+
+          <div class="form-group row">
+            <label for="description" class="col-sm-3 col-form-label">Description</label>
+            <input formControlName="description" [(ngModel)]="coupon.description" type="text" class="form-control col-sm-9" id="description" name="description">
+          </div>
+
+          <div class="form-group row">
+            <label for="discountPercent" class="col-sm-3 col-form-label">Discount (%)</label>
+            <input formControlName="discountPercent" [(ngModel)]="coupon.discountPercent" type="number" step="1" min="1" max="100" class="form-control col-sm-9" id="discountPercent" name="discountPercent">
+          </div>
+
+          <div class="text-center" *ngIf="coupon.status">
+            <button type="submit" class="btn btn-primary mt-4">Save</button>
+            <button type="button" class="btn btn-danger mt-4 ml-4" (click)="delete(coupon.couponId)">Deactive</button>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+
+  </ng-template>
+
+  <ng-template #hidden>
+      <div class="row text-center my-5">
+        <div class="col-md-12">
+          <div class="error-template">
+
+            <h1> Oops!</h1>
+
+            <h2>  404 Not Found</h2>
+
+            <div class="error-details my-4">
+              Sorry, an error has occured, Requested page not found!
+            </div>
+          </div>
+        </div>
+      </div>
+  </ng-template>
+
+</div>

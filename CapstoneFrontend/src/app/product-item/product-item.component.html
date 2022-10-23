@@ -1,0 +1,46 @@
+<div class="card h-100">
+  <!-- Product image-->
+  <img class="card-img-top" src="{{getFeatureImage()}}" />
+  <!-- Product details-->
+  <div class="card-body p-4">
+    <div class="text-center">
+      <strong>${{product.price}}</strong>
+      <div class="d-flex justify-content-center small text-warning my-2">
+        <div class="bi-star-fill"></div>
+        <div class="bi-star-fill"></div>
+        <div class="bi-star-fill"></div>
+        <div class="bi-star-fill"></div>
+        <div class="bi-star-fill"></div>
+      </div>
+      <h6>{{product.name}}</h6>
+    </div>
+  </div>
+
+  <div class="dish-data">
+
+    <input type="hidden" name="dishId" value="{{product.productId}}" required>
+
+    <div class="d-flex justify-content-center">
+      <button type="button" class="btn btn-link px-2" (click)="decreaseQuantity()">
+        &#8722;
+      </button>
+
+      <input min="1" name="quantity" type="number" [(ngModel)] = "quantity" value="{{quantity}}"
+             class="form-control form-control-sm text-center px-2 mx-2" style="width: 50px;" required />
+      <button type="button" class="btn btn-link px-2" (click)="increaseQuantity()"> &#43; </button>
+    </div>
+
+    <!-- Product actions-->
+    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+      <div class="text-center">
+        <button class="btn btn-sm btn-outline-dark mt-auto mr-2" type="button" (click)="addToCart()">Add to cart</button>
+        <button class="btn btn-sm btn-outline-danger mt-auto" type="button" (click)="addToWishlist()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 -2 17 16">
+              <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+            </svg>
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>

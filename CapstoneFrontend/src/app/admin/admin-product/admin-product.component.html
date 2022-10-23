@@ -1,0 +1,180 @@
+<div class="container my-4">
+  <div *ngIf="product.productId > 0 || isAdd then display else hidden"></div>
+
+  <ng-template #display>
+
+    <div class="row">
+      <div class="col-12 col-sm-4">
+
+        <h4 class="mb-4">Category</h4>
+
+          <div class="form-check" *ngFor="let item of categories; let i = index">
+
+            <div *ngIf="isChecked(item.categoryId); then checkedField else uncheckedField"> </div>
+
+            <ng-template #checkedField>
+              <input type="checkbox" class="form-check-input" [value]="i" (change)="onCheckboxChange($event)" id="label-{{i}}" checked>
+            </ng-template>
+
+            <ng-template #uncheckedField>
+              <input type="checkbox" class="form-check-input" [value]="i" (change)="onCheckboxChange($event)" id="label-{{i}}">
+
+            </ng-template>
+
+            <label class="form-check-label" for="label-{{i}}">{{item.name}}</label>
+          </div>
+
+      </div>
+      <div class="col-12 col-sm-8">
+
+        <h4 class="mb-4"> Product details</h4>
+
+        <div class="gallery">
+          <div class="d-flex justify-content-between align-items-center">
+            <h6> Gallery</h6>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary btn-sm my-3 d-inline-flex" data-toggle="modal" data-target="#exampleModalLong">
+              <svg width="24" height="24" style="fill: white" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M24 22h-24v-20h24v20zm-1-19h-22v18h22v-18zm-1 16h-19l4-7.492 3 3.048 5.013-7.556 6.987 12zm-11.848-2.865l-2.91-2.956-2.574 4.821h15.593l-5.303-9.108-4.806 7.243zm-4.652-11.135c1.38 0 2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5-2.5-1.12-2.5-2.5 1.12-2.5 2.5-2.5zm0 1c.828 0 1.5.672 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.672-1.5-1.5.672-1.5 1.5-1.5z"/></svg>
+              <span class="ml-1">Library</span>
+            </button>
+          </div>
+
+          <!--    Gallery   -->
+          <div class="form-group row border" [(ngModel)]="product.images" ngDefaultControl>
+
+            <div *ngIf="product.images.length == 0" class="col-12"><p class="p-5 text-center w-100">Empty now</p></div>
+
+            <div class="p-1" *ngFor="let item of product.images">
+              <img src="{{item.url}}" alt="{{item.name}}" class="collection-item">
+            </div>
+          </div>
+        </div>
+
+        <form class="mb-5" [formGroup]="productForm" (ngSubmit)="submitForm()">
+
+
+          <div class="form-group row" *ngIf="!isAdd">
+            <label class="col-sm-3 col-form-label">productId</label>
+            <input formControlName="productId" type="number" name="productId" class="form-control col-sm-9" id="" [(ngModel)] = "product.productId" readonly>
+          </div>
+
+          <div class="form-group row">
+            <label for="name" class="col-sm-3 col-form-label">Name</label>
+            <input formControlName="name" [(ngModel)]="product.name" type="text" class="form-control col-sm-9" id="name" name="name">
+          </div>
+
+          <div class="form-group row">
+            <label for="description" class="col-sm-3 col-form-label">Description</label>
+            <input formControlName="description" [(ngModel)]="product.description" type="text" class="form-control col-sm-9" id="description" name="description">
+          </div>
+
+          <div class="form-group row">
+            <label for="price" class="col-sm-3 col-form-label">Price</label>
+            <input formControlName="price" [(ngModel)]="product.price" type="number" step="1" min="1" class="form-control col-sm-9" id="price" name="price">
+          </div>
+
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label" for="inStock">In stock</label>
+            <input formControlName="inStock" [(ngModel)]="product.inStock" type="number" step="1" min="1" class="form-control col-sm-9" id="inStock" name="inStock">
+          </div>
+
+          <input formControlName="active" [(ngModel)]="product.active" type="hidden" name="active">
+
+          <div class="text-center">
+
+            <div *ngIf="isAdd">
+              <button type="submit" class="btn btn-success mt-4">Add</button>
+            </div>
+
+            <div *ngIf="!isAdd">
+              <button type="submit" class="btn btn-success mt-4">Update</button>
+              <button type="button" class="btn btn-danger mt-4 ml-4" (click)="delete(product.productId)" *ngIf="product.active">Delete</button>
+            </div>
+
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+
+  </ng-template>
+
+  <ng-template #hidden>
+
+    <div class="row text-center my-5">
+      <div class="col-md-12">
+        <div class="error-template">
+
+          <h1> Oops!</h1>
+
+          <h2>  404 Not Found</h2>
+
+          <div class="error-details my-4">
+            Sorry, an error has occured, Requested page not found!
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+</div>
+
+
+<!--MODAL Library-->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Library</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="row">
+          <div *ngFor="let item of images; let position = index" class="col-6 col-md-4 col-lg-3">
+
+            <div class="bg-white rounded shadow-sm">
+              <div class="d-flex justify-content-center">
+
+                <div *ngIf="alreadyChecked(item.imageId); then checkImage else uncheckImage"></div>
+
+                <ng-template #checkImage>
+                  <input class="form-check-input" type="checkbox"
+                         (change)="onCheckboxImageChange(position, $event)"
+                         name="item-{{item.imageId}}" value="{{item.imageId}}" id="item-{{item.imageId}}" checked />
+                </ng-template>
+
+                <ng-template #uncheckImage>
+                  <input class="form-check-input" type="checkbox"
+                         (change)="onCheckboxImageChange(position, $event)"
+                         name="item-{{item.imageId}}" value="{{item.imageId}}" id="item-{{item.imageId}}"/>
+                </ng-template>
+
+                <label for="item-{{item.imageId}}">
+                  <img src="{{item.url}}" alt="{{item.name}}" class="img-fluid card-img-top collection-item">
+                </label>
+
+              </div>
+
+              <div class="p-4">
+                <h6> <a href="#" class="text-dark">{{item.name}}</a></h6>
+                <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+                  <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">Media</span></p>
+                  <div class="badge badge-danger px-3 rounded-pill font-weight-normal">{{item.mediaType}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
