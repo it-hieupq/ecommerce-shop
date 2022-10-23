@@ -1,0 +1,118 @@
+<section class="py-5">
+  <div class="container px-4 px-lg-5">
+
+    <div class="header-container d-flex justify-content-between mb-4">
+      <h4>Category management</h4>
+      <button class="btn btn-success btn-sm px-2" type="button" data-toggle="modal" data-target="#addForm">Add Category</button>
+    </div>
+
+    <div class="row justify-content-center">
+
+      <div class="product-item col-12 col-sm-6 col-md-4 col-lg-3 mb-5" *ngFor="let item of categories">
+
+        <div class="card h-100">
+
+          <div class="card-body p-2">
+            <h6 class="card-title">{{item.name}}</h6>
+            <p class="card-text">{{item.description}}</p>
+          </div>
+
+          <div class="card-footer p-2 bg-light">
+            <button class="btn btn-sm btn-primary mr-2"
+                    type="button" data-toggle="modal" data-target="#editForm"
+                    (click)="category = item; showing = true">
+              Edit
+            </button>
+            <button class="btn btn-sm btn-danger" (click)="deleteCategory(item.categoryId)">Delete</button>
+          </div>
+
+          <p class="text-center my-2">
+            <small><i> something </i></small>
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FORM ADD -->
+<div class="modal fade" id="addForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Add new category</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form [formGroup]="addForm" (ngSubmit)="addCategory()">
+
+          <div class="form-group">
+            <label for="name">Category name</label>
+            <input formControlName="name" type="text" class="form-control" id="name">
+          </div>
+
+          <div class="error">
+            <div class="alert-danger alert" *ngIf="name && name.errors?.['required'] && active">
+              This field is required!
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="description">Description</label>
+            <input formControlName="description" type="text" class="form-control" id="description" required>
+          </div>
+
+          <button type="button" class="btn btn-secondary mr-3" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Add</button>
+
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- FORM EDIT -->
+<div class="modal fade" id="editForm" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Edit Category</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" [(ngModel)]="category.name" value="{{category.name}}">
+        </div>
+
+        <div class="error">
+          <div class="alert-danger alert" *ngIf="name && name.errors?.['required'] && active">
+            This field is required!
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="description">description</label>
+          <input type="description" class="form-control" [(ngModel)]="category.description" value="{{category.description}}">
+        </div>
+
+        <button type="button" class="btn btn-secondary mr-3" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" data-dismiss="modal" (click)="updateCategory()">Update</button>
+
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<section class="py-5">
+  <div class="container px-4 px-lg-5">
+
+    <h4>{{category.name}}</h4>
+    <p><i>{{category.description}}</i></p>
+
+    <div class="row justify-content-center">
+
+      <div *ngIf="products == null || products.length ==0; then emptyList else displayList "></div>
+
+      <ng-template #displayList>
+        <div class="product-item col-12 col-sm-6 col-md-4 col-lg-3 mb-5" *ngFor="let product of products">
+          <app-product-item [product] = "product"> </app-product-item>
+        </div>
+      </ng-template>
+
+      <ng-template #emptyList>
+        <div class="alert alert-secondary col-12" role="alert">
+          <h4 class="alert-heading">Category is empty</h4>
+          <p>Aww this kind of product is not present now.</p>
+          <p>We will provide it in near feature, just waiting for somthing awesome!!!</p>
+          <hr>
+          <p class="mb-0">Content is empty now.</p>
+        </div>
+      </ng-template>
+
+    </div>
+  </div>
+</section>

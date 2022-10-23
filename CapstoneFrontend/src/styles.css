@@ -1,0 +1,27 @@
+.modal-lg, .modal-dialog {
+  width: 90% !important;
+}
+
+@media (min-width: 576px){
+  .modal-dialog {
+    max-width: 90% !important;
+  }
+  .modal-lg {
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 992px){
+  .modal-lg {
+    max-width: 90%;
+  }
+
+  .modal-lg {
+    max-width: 90% !important;
+  }
+}
+
+.collection-item{
+  height: 180px;
+  width: auto;
+}

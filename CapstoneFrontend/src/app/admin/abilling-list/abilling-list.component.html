@@ -1,0 +1,97 @@
+
+<!--<div class="container my-5">-->
+
+<!--  <div class="group-tabs">-->
+<!--    &lt;!&ndash; Nav tabs &ndash;&gt;-->
+<!--    <ul class="nav nav-tabs" role="tablist">-->
+<!--      <li role="presentation" class="active tab-header">-->
+<!--        <a  href="#bills" aria-controls="bills" role="tab" data-toggle="tab">Billing</a>-->
+<!--      </li>-->
+
+<!--      <li role="presentation" class="tab-header">-->
+<!--        <a href="#sales-day" aria-controls="sales-day" role="tab" data-toggle="tab">Sales of day</a>-->
+<!--      </li>-->
+
+<!--      <li role="presentation" class="tab-header">-->
+<!--        <a href="#sales-month" aria-controls="sales-month" role="tab" data-toggle="tab">Sales of month</a>-->
+<!--      </li>-->
+<!--    </ul>-->
+
+<!--    &lt;!&ndash; Tab panes &ndash;&gt;-->
+<!--    <div class="tab-content">-->
+
+<!--&lt;!&ndash;      All of bill&ndash;&gt;-->
+<!--      <div role="tabpanel" class="tab-pane active" id="bills">-->
+
+<!--        <div *ngIf="bills.length >0; else emptyListAll">-->
+
+<!--          <h3 class="text-center my-3">All of bill</h3>-->
+
+<!--          <p><b>Total orders: {{bills.length}}</b></p>-->
+<!--          <p> <b> Total sales: {{totalSales(bills)}} </b></p>-->
+
+<!--          <div class="card my-3" *ngFor="let billing of bills">-->
+<!--            <app-abilling [item] = "billing" [type]="'all'"></app-abilling>-->
+<!--          </div >-->
+<!--        </div>-->
+
+<!--        <ng-template #emptyListAll>-->
+<!--          <div class="my-4">-->
+<!--            <h2 class="text-center">Not yet any order</h2>-->
+<!--          </div>-->
+<!--        </ng-template>-->
+
+<!--      </div>-->
+
+<!--&lt;!&ndash;      Bills by day&ndash;&gt;-->
+<!--      <div role="tabpanel" class="tab-pane" id="sales-day">-->
+
+<!--        <div *ngIf="billsByDay.length >0; else emptyListDay">-->
+
+<!--          <h3 class="text-center my-3">Sales by day</h3>-->
+
+<!--          <p><b>Total orders: {{billsByDay.length}}</b></p>-->
+<!--          <p> <b> Total sales: {{totalSales(billsByDay)}} </b></p>-->
+
+<!--          <div class="card my-3" *ngFor="let billing of billsByDay">-->
+<!--            <app-abilling [item] = "billing" [type]="'sales-day'"></app-abilling>-->
+<!--          </div >-->
+
+<!--        </div>-->
+
+<!--        <ng-template #emptyListDay>-->
+
+<!--          <div class="my-4">-->
+<!--            <h2 class="text-center">Today is not yet any order</h2>-->
+<!--          </div>-->
+
+<!--        </ng-template>-->
+
+<!--      </div>-->
+
+<!--&lt;!&ndash;      Bills by current month&ndash;&gt;-->
+<!--      <div role="tabpanel" class="tab-pane" id="sales-month">-->
+<!--        <div *ngIf="billsByMonth.length >0; else emptyListMonth">-->
+
+<!--          <h3 class="text-center my-3">Sales by Month</h3>-->
+
+<!--          <p><b>Total orders: {{billsByMonth.length}}</b></p>-->
+<!--          <p> <b> Total sales: {{totalSales(billsByMonth)}} </b></p>-->
+
+<!--          <div class="card my-3" *ngFor="let billing of billsByMonth">-->
+<!--            <app-abilling [item] = "billing" [type]="'sales-month'"></app-abilling>-->
+<!--          </div >-->
+
+<!--        </div>-->
+
+<!--        <ng-template #emptyListMonth>-->
+
+<!--          <div class="my-4">-->
+<!--            <h2 class="text-center">This month was not yet any order</h2>-->
+<!--          </div>-->
+
+<!--        </ng-template>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->

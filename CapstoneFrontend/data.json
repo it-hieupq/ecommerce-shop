@@ -1,0 +1,803 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "666666",
+      "role": "admin",
+      "phone": "8433555777",
+      "address": "499 Kim Ma, Ba Dinh, Hanoi, Vietnam"
+    },
+    {
+      "id": 2,
+      "username": "user",
+      "password": "666666",
+      "role": "user",
+      "phone": "8492222111",
+      "address": "103 Nguyen Thai Hoc, Hanoi, Vietnam"
+    },
+    {
+      "username": "henry_ph",
+      "address": "Viet nam",
+      "password": "111111",
+      "phone": "0928340213",
+      "role": "user",
+      "id": 3
+    },
+    {
+      "username": "trinh123",
+      "address": "Viet nam",
+      "password": "trinh123",
+      "phone": "0000000000",
+      "role": "user",
+      "id": 4
+    }
+  ],
+  "dishes": [
+    {
+      "id": 1,
+      "image": "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
+      "name": "Cake",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+      "price": 29.9
+    },
+    {
+      "id": 2,
+      "image": "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
+      "name": "Japan Sushi",
+      "description": "Lorem Ipsum is simply dummy text...",
+      "price": 26
+    },
+    {
+      "id": 3,
+      "image": "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
+      "name": "Beef Steak",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "price": 30
+    },
+    {
+      "id": 4,
+      "image": "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
+      "name": "Pan Cake",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+      "price": 18
+    },
+    {
+      "id": 5,
+      "image": "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
+      "name": "Vegetable Salad",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+      "price": 32
+    },
+    {
+      "id": 6,
+      "image": "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
+      "name": "Chicken Fried",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+      "price": 20
+    },
+    {
+      "id": 7,
+      "image": "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
+      "name": "Pumpkins Pie",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+      "price": 33
+    },
+    {
+      "id": 8,
+      "image": "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
+      "name": "KFC Burger",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+      "price": 19
+    },
+    {
+      "id": 9,
+      "image": "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
+      "name": "Fish",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+      "price": 12
+    },
+    {
+      "id": 10,
+      "image": "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
+      "name": "Chicken",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+      "price": 19
+    },
+    {
+      "name": "Fish 2",
+      "description": "nothing",
+      "price": 90,
+      "image": "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
+      "id": 11
+    }
+  ],
+  "orders": [
+    {
+      "userId": 1,
+      "orderDate": "2022-04-08",
+      "id": 1
+    },
+    {
+      "userId": 2,
+      "orderDate": "2022-02-05",
+      "id": 2
+    },
+    {
+      "userId": 2,
+      "orderDate": "2022-03-02",
+      "id": 3
+    },
+    {
+      "userId": 2,
+      "orderDate": "2022-04-08",
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "orderDate": "2022-04-06",
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "orderDate": "2022-04-08",
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "orderDate": "2022-04-08",
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "orderDate": "2022-04-08",
+      "id": 8
+    },
+    {
+      "userId": 4,
+      "orderDate": "2022-04-08",
+      "id": 9
+    },
+    {
+      "userId": 4,
+      "orderDate": "2022-04-08",
+      "id": 10
+    },
+    {
+      "userId": 1,
+      "orderDate": "2022-04-08",
+      "id": 11
+    },
+    {
+      "userId": 1,
+      "orderDate": "2022-04-14",
+      "id": 12
+    },
+    {
+      "userId": 2,
+      "orderDate": "2022-04-14",
+      "id": 13
+    },
+    {
+      "userId": 2,
+      "orderDate": "2022-04-14",
+      "id": 14
+    },
+    {
+      "userId": 2,
+      "orderDate": "2022-04-14",
+      "id": 15
+    },
+    {
+      "userId": 2,
+      "orderDate": "2022-04-14",
+      "id": 16
+    },
+    {
+      "userId": 2,
+      "orderDate": "2022-04-14",
+      "id": 17
+    },
+    {
+      "userId": 2,
+      "orderDate": "2022-04-14",
+      "id": 18
+    },
+    {
+      "userId": 2,
+      "orderDate": "2022-04-14",
+      "id": 19
+    },
+    {
+      "userId": 2,
+      "orderDate": "2022-04-14",
+      "id": 20
+    },
+    {
+      "userId": 2,
+      "orderDate": "2022-04-14",
+      "id": 21
+    },
+    {
+      "userId": 2,
+      "orderDate": "2022-04-14",
+      "id": 22
+    },
+    {
+      "userId": 2,
+      "orderDate": "2022-04-14",
+      "id": 23
+    },
+    {
+      "userId": 2,
+      "orderDate": "2022-04-14",
+      "id": 24
+    },
+    {
+      "userId": 2,
+      "orderDate": "2022-04-14",
+      "id": 25
+    },
+    {
+      "userId": 2,
+      "orderDate": "2022-04-14",
+      "id": 26
+    },
+    {
+      "userId": 1,
+      "orderDate": "2022-04-14",
+      "id": 27
+    },
+    {
+      "userId": 2,
+      "orderDate": "2022-04-22",
+      "id": 28
+    }
+  ],
+  "order_details": [
+    {
+      "dishId": 3,
+      "quantity": 4,
+      "price": 30,
+      "dishName": "Beef Steak",
+      "orderId": "1",
+      "id": 1
+    },
+    {
+      "dishId": 3,
+      "quantity": 7,
+      "price": 30,
+      "dishName": "Beef Steak",
+      "orderId": "2",
+      "id": 2
+    },
+    {
+      "dishId": 3,
+      "quantity": 7,
+      "price": 30,
+      "dishName": "Beef Steak",
+      "orderId": "3",
+      "id": 3
+    },
+    {
+      "dishId": 3,
+      "quantity": 7,
+      "price": 30,
+      "dishName": "Beef Steak",
+      "orderId": "4",
+      "id": 4
+    },
+    {
+      "dishId": 1,
+      "quantity": 4,
+      "price": 29.9,
+      "dishName": "Cake",
+      "orderId": "5",
+      "id": 5
+    },
+    {
+      "dishId": 2,
+      "quantity": 2,
+      "price": 26,
+      "dishName": "Japan Sushi",
+      "orderId": "5",
+      "id": 6
+    },
+    {
+      "dishId": 3,
+      "quantity": 1,
+      "price": 30,
+      "dishName": "Beef Steak",
+      "orderId": "5",
+      "id": 7
+    },
+    {
+      "dishId": 6,
+      "quantity": 2,
+      "price": 20,
+      "dishName": "Chicken Fried",
+      "orderId": "5",
+      "id": 8
+    },
+    {
+      "dishId": 4,
+      "quantity": 3,
+      "price": 18,
+      "dishName": "Pan Cake",
+      "orderId": "6",
+      "id": 9
+    },
+    {
+      "dishId": 9,
+      "quantity": 1,
+      "price": 12,
+      "dishName": "Fish",
+      "orderId": "6",
+      "id": 10
+    },
+    {
+      "dishId": 10,
+      "quantity": 1,
+      "price": 19,
+      "dishName": "Chicken",
+      "orderId": "6",
+      "id": 11
+    },
+    {
+      "dishId": 3,
+      "quantity": 1,
+      "price": 30,
+      "dishName": "Beef Steak",
+      "orderId": "7",
+      "id": 12
+    },
+    {
+      "dishId": 5,
+      "quantity": 2,
+      "price": 32,
+      "dishName": "Vegetable Salad",
+      "orderId": "7",
+      "id": 13
+    },
+    {
+      "dishId": 5,
+      "quantity": 2,
+      "price": 32,
+      "dishName": "Vegetable Salad",
+      "orderId": "7",
+      "id": 14
+    },
+    {
+      "dishId": 5,
+      "quantity": 4,
+      "price": 32,
+      "dishName": "Vegetable Salad",
+      "orderId": "8",
+      "id": 15
+    },
+    {
+      "dishId": 6,
+      "quantity": 3,
+      "price": 20,
+      "dishName": "Chicken Fried",
+      "orderId": "9",
+      "id": 16
+    },
+    {
+      "dishId": 3,
+      "quantity": 1,
+      "price": 30,
+      "dishName": "Beef Steak",
+      "orderId": "9",
+      "id": 17
+    },
+    {
+      "dishId": 3,
+      "quantity": 1,
+      "price": 30,
+      "dishName": "Beef Steak",
+      "orderId": "10",
+      "id": 18
+    },
+    {
+      "dishId": 6,
+      "quantity": 3,
+      "price": 20,
+      "dishName": "Chicken Fried",
+      "orderId": "10",
+      "id": 19
+    },
+    {
+      "dishId": 1,
+      "quantity": 1,
+      "price": 29.9,
+      "dishName": "Cake",
+      "orderId": "11",
+      "id": 20
+    },
+    {
+      "dishId": 2,
+      "quantity": 1,
+      "price": 26,
+      "dishName": "Japan Sushi",
+      "orderId": "11",
+      "id": 21
+    },
+    {
+      "dishId": 3,
+      "quantity": 1,
+      "price": 30,
+      "dishName": "Beef Steak",
+      "orderId": "11",
+      "id": 22
+    },
+    {
+      "dishId": 5,
+      "quantity": 1,
+      "price": 32,
+      "dishName": "Vegetable Salad",
+      "orderId": "11",
+      "id": 23
+    },
+    {
+      "dishId": 2,
+      "quantity": 1,
+      "price": 26,
+      "dishName": "Japan Sushi",
+      "orderId": "12",
+      "id": 24
+    },
+    {
+      "dishId": 3,
+      "quantity": 2,
+      "price": 30,
+      "dishName": "Beef Steak",
+      "orderId": "12",
+      "id": 25
+    },
+    {
+      "dishId": 2,
+      "quantity": 1,
+      "price": 26,
+      "dishName": "Japan Sushi",
+      "orderId": "13",
+      "id": 26
+    },
+    {
+      "dishId": 3,
+      "quantity": 2,
+      "price": 30,
+      "dishName": "Beef Steak",
+      "orderId": "13",
+      "id": 27
+    },
+    {
+      "dishId": 8,
+      "quantity": 1,
+      "price": 19,
+      "dishName": "KFC Burger",
+      "orderId": "13",
+      "id": 28
+    },
+    {
+      "dishId": 1,
+      "quantity": 1,
+      "price": 29.9,
+      "dishName": "Cake",
+      "orderId": "14",
+      "id": 29
+    },
+    {
+      "dishId": 2,
+      "quantity": 2,
+      "price": 26,
+      "dishName": "Japan Sushi",
+      "orderId": "14",
+      "id": 30
+    },
+    {
+      "dishId": 3,
+      "quantity": 1,
+      "price": 30,
+      "dishName": "Beef Steak",
+      "orderId": "14",
+      "id": 31
+    },
+    {
+      "dishId": 4,
+      "quantity": 1,
+      "price": 18,
+      "dishName": "Pan Cake",
+      "orderId": "14",
+      "id": 32
+    },
+    {
+      "dishId": 3,
+      "quantity": 1,
+      "price": 30,
+      "dishName": "Beef Steak",
+      "orderId": "15",
+      "id": 33
+    },
+    {
+      "dishId": 2,
+      "quantity": 1,
+      "price": 26,
+      "dishName": "Japan Sushi",
+      "orderId": "16",
+      "id": 34
+    },
+    {
+      "dishId": 4,
+      "quantity": 1,
+      "price": 18,
+      "dishName": "Pan Cake",
+      "orderId": "16",
+      "id": 35
+    },
+    {
+      "dishId": 7,
+      "quantity": 1,
+      "price": 33,
+      "dishName": "Pumpkins Pie",
+      "orderId": "16",
+      "id": 36
+    },
+    {
+      "dishId": 8,
+      "quantity": 1,
+      "price": 19,
+      "dishName": "KFC Burger",
+      "orderId": "16",
+      "id": 37
+    },
+    {
+      "dishId": 3,
+      "quantity": 1,
+      "price": 30,
+      "dishName": "Beef Steak",
+      "orderId": "16",
+      "id": 38
+    },
+    {
+      "dishId": 1,
+      "quantity": 1,
+      "price": 29.9,
+      "dishName": "Cake",
+      "orderId": "17",
+      "id": 39
+    },
+    {
+      "dishId": 3,
+      "quantity": 2,
+      "price": 30,
+      "dishName": "Beef Steak",
+      "orderId": "17",
+      "id": 40
+    },
+    {
+      "dishId": 4,
+      "quantity": 2,
+      "price": 18,
+      "dishName": "Pan Cake",
+      "orderId": "17",
+      "id": 41
+    },
+    {
+      "dishId": 7,
+      "quantity": 1,
+      "price": 33,
+      "dishName": "Pumpkins Pie",
+      "orderId": "17",
+      "id": 42
+    },
+    {
+      "dishId": 8,
+      "quantity": 1,
+      "price": 19,
+      "dishName": "KFC Burger",
+      "orderId": "17",
+      "id": 43
+    },
+    {
+      "dishId": 2,
+      "quantity": 2,
+      "price": 26,
+      "dishName": "Japan Sushi",
+      "orderId": "17",
+      "id": 44
+    },
+    {
+      "dishId": 2,
+      "quantity": 2,
+      "price": 26,
+      "dishName": "Japan Sushi",
+      "orderId": "18",
+      "id": 45
+    },
+    {
+      "dishId": 7,
+      "quantity": 1,
+      "price": 33,
+      "dishName": "Pumpkins Pie",
+      "orderId": "18",
+      "id": 46
+    },
+    {
+      "dishId": 8,
+      "quantity": 3,
+      "price": 19,
+      "dishName": "KFC Burger",
+      "orderId": "18",
+      "id": 47
+    },
+    {
+      "dishId": 5,
+      "quantity": 1,
+      "price": 32,
+      "dishName": "Vegetable Salad",
+      "orderId": "18",
+      "id": 48
+    },
+    {
+      "dishId": 6,
+      "quantity": 1,
+      "price": 20,
+      "dishName": "Chicken Fried",
+      "orderId": "18",
+      "id": 49
+    },
+    {
+      "dishId": 1,
+      "quantity": 1,
+      "price": 29.9,
+      "dishName": "Cake",
+      "orderId": "19",
+      "id": 50
+    },
+    {
+      "dishId": 1,
+      "quantity": 1,
+      "price": 29.9,
+      "dishName": "Cake",
+      "orderId": "20",
+      "id": 51
+    },
+    {
+      "dishId": 2,
+      "quantity": 2,
+      "price": 26,
+      "dishName": "Japan Sushi",
+      "orderId": "20",
+      "id": 52
+    },
+    {
+      "dishId": 2,
+      "quantity": 1,
+      "price": 26,
+      "dishName": "Japan Sushi",
+      "orderId": "21",
+      "id": 53
+    },
+    {
+      "dishId": 6,
+      "quantity": 1,
+      "price": 20,
+      "dishName": "Chicken Fried",
+      "orderId": "22",
+      "id": 54
+    },
+    {
+      "dishId": 7,
+      "quantity": 1,
+      "price": 33,
+      "dishName": "Pumpkins Pie",
+      "orderId": "22",
+      "id": 55
+    },
+    {
+      "dishId": 1,
+      "quantity": 1,
+      "price": 29.9,
+      "dishName": "Cake",
+      "orderId": "24",
+      "id": 56
+    },
+    {
+      "dishId": 2,
+      "quantity": 15,
+      "price": 26,
+      "dishName": "Japan Sushi",
+      "orderId": "24",
+      "id": 57
+    },
+    {
+      "dishId": 1,
+      "quantity": 1,
+      "price": 29.9,
+      "dishName": "Cake",
+      "orderId": "26",
+      "id": 58
+    },
+    {
+      "dishId": 3,
+      "quantity": 2,
+      "price": 30,
+      "dishName": "Beef Steak",
+      "orderId": "26",
+      "id": 59
+    },
+    {
+      "dishId": 4,
+      "quantity": 1,
+      "price": 18,
+      "dishName": "Pan Cake",
+      "orderId": "26",
+      "id": 60
+    },
+    {
+      "dishId": 7,
+      "quantity": 1,
+      "price": 33,
+      "dishName": "Pumpkins Pie",
+      "orderId": "26",
+      "id": 61
+    },
+    {
+      "dishId": 2,
+      "quantity": 1,
+      "price": 26,
+      "dishName": "Japan Sushi",
+      "orderId": "26",
+      "id": 62
+    },
+    {
+      "dishId": 8,
+      "quantity": 1,
+      "price": 19,
+      "dishName": "KFC Burger",
+      "orderId": "26",
+      "id": 63
+    },
+    {
+      "dishId": 2,
+      "quantity": 1,
+      "price": 26,
+      "dishName": "Japan Sushi",
+      "orderId": "27",
+      "id": 64
+    },
+    {
+      "dishId": 3,
+      "quantity": 1,
+      "price": 30,
+      "dishName": "Beef Steak",
+      "orderId": "27",
+      "id": 65
+    },
+    {
+      "dishId": 4,
+      "quantity": 1,
+      "price": 18,
+      "dishName": "Pan Cake",
+      "orderId": "27",
+      "id": 66
+    },
+    {
+      "dishId": 1,
+      "quantity": 4,
+      "price": 29.9,
+      "dishName": "Cake",
+      "orderId": "28",
+      "id": 67
+    },
+    {
+      "dishId": 2,
+      "quantity": 2,
+      "price": 26,
+      "dishName": "Japan Sushi",
+      "orderId": "28",
+      "id": 68
+    }
+  ]
+}

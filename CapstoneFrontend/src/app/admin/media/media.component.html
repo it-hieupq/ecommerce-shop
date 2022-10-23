@@ -1,0 +1,129 @@
+<div class="my-5 container">
+
+    <div class="px-lg-5">
+
+      <div class="row py-5">
+        <div class="col-lg-12 mx-auto">
+          <h2>Image management</h2>
+          <p>Handle Image in here</p>
+
+          <div class="action-btn-float fixed-bottom d-flex p-3">
+
+            <button type="button" class="btn btn-primary mr-3 d-inline-flex" id="upload-btn" data-toggle="modal" data-target=".bd-example-modal-lg">
+              <svg width="24" height="24" style="fill: white" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M11.492 10.172l-2.5 3.064-.737-.677 3.737-4.559 3.753 4.585-.753.665-2.5-3.076v7.826h-1v-7.828zm7.008 9.828h-13c-2.481 0-4.5-2.018-4.5-4.5 0-2.178 1.555-4.038 3.698-4.424l.779-.14.043-.789c.185-3.448 3.031-6.147 6.48-6.147 3.449 0 6.295 2.699 6.478 6.147l.044.789.78.14c2.142.386 3.698 2.246 3.698 4.424 0 2.482-2.019 4.5-4.5 4.5m.978-9.908c-.212-3.951-3.472-7.092-7.478-7.092s-7.267 3.141-7.479 7.092c-2.57.463-4.521 2.706-4.521 5.408 0 3.037 2.463 5.5 5.5 5.5h13c3.037 0 5.5-2.463 5.5-5.5 0-2.702-1.951-4.945-4.522-5.408"/></svg>
+              <span class="ml-1">Upload images</span>
+            </button>
+
+            <button type="button" class="btn btn-danger d-inline-flex" id="delete-btn" [disabled]="!checkedImages.length" (click)="delete()">
+              <svg width="24"  height="24" style="fill: white" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M19 24h-14c-1.104 0-2-.896-2-2v-16h18v16c0 1.104-.896 2-2 2zm-7-10.414l3.293-3.293 1.414 1.414-3.293 3.293 3.293 3.293-1.414 1.414-3.293-3.293-3.293 3.293-1.414-1.414 3.293-3.293-3.293-3.293 1.414-1.414 3.293 3.293zm10-8.586h-20v-2h6v-1.5c0-.827.673-1.5 1.5-1.5h5c.825 0 1.5.671 1.5 1.5v1.5h6v2zm-8-3h-4v1h4v-1z"/></svg>              <span class="ml-1">Delete</span>
+            </button>
+          </div>
+
+          <hr>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Gallery item -->
+        <div [(ngModel)]="images" ngDefaultControl></div>
+
+        <div  *ngFor="let item of images" class="col-xl-3 col-lg-4 col-md-6 mb-4">
+          <div class="bg-white rounded shadow-sm">
+            <div class="d-flex justify-content-center">
+
+              <input class="form-check-input" type="checkbox"
+                     (change)="onCheckboxChange(item.imageId, $event)"
+                     name="item-{{item.imageId}}" value="{{item.imageId}}" id="item-{{item.imageId}}" />
+
+              <label for="item-{{item.imageId}}">
+                <img src="{{item.url}}" alt="" class="img-fluid card-img-top collection-item">
+              </label>
+
+            </div>
+
+            <div class="p-4">
+              <h6> <a href="#" class="text-dark">{{item.name}}</a></h6>
+              <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+                <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">Media</span></p>
+                <div class="badge badge-danger px-3 rounded-pill font-weight-normal">{{item.mediaType}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End -->
+
+      </div>
+      <div class="py-5 text-right">Total: xxx</div>
+    </div>
+
+</div>
+
+<!-- MODAL UPLOAD -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Upload images</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+
+        <div *ngFor="let progressInfo of progressInfos" class="mb-2">
+          <span>{{ progressInfo.fileName }}</span>
+          <div class="progress">
+            <div
+              class="progress-bar progress-bar-info progress-bar-striped"
+              role="progressbar"
+              attr.aria-valuenow="{{ progressInfo.value }}"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              [ngStyle]="{ width: progressInfo.value + '%' }"
+            >
+              {{ progressInfo.value }}%
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <label class="btn btn-default p-0">
+              <input #filesInput id="files" type="file" name="files" accept="image/*" multiple (change)="selectFiles($event)" />
+            </label>
+          </div>
+        </div>
+
+        <div>
+          <div *ngFor='let preview of previews' class="d-inline-block position-relative">
+            <img [src]="preview" class="preview mt-2 mr-2" style="height: 180px;">
+
+            <div class="position-absolute" style="top: 10px; right: 16px">
+              <button type="button" class="close text-danger">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <div *ngIf="message.length" class="alert alert-secondary my-3" role="alert">
+          <ul *ngFor="let msg of message; let i = index">
+            <li>{{ msg }}</li>
+          </ul>
+        </div>
+
+      </div> <!-- End of modal body -->
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+        <button class="btn btn-danger btn-sm"  [disabled]="!selectedFiles"  (click)="clearFiles($event)"> Clear files </button>
+        <button class="btn btn-success btn-sm"  [disabled]="!selectedFiles"  (click)="uploadFiles()"> Upload all </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+

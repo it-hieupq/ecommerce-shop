@@ -1,0 +1,61 @@
+<div class="container">
+
+  <div class="row my-5">
+    <div class="col-md-4">
+
+      <div class="search-body">
+
+        <form (ngSubmit)="submitSearchForm()">
+          <div class="form-group">
+            <label for="keyword">Keyword</label>
+            <input [(ngModel)]="filter.keyword" type="text" class="form-control" name="keyword" id="keyword" placeholder="Airpods, Iphone, etc">
+          </div>
+
+          <div class="form-row">
+            <div class="col-6 mb-3">
+              <label for="minPrice">Min Price</label>
+              <input [(ngModel)]="filter.minPrice" type="number" min="0" step="1" class="form-control" name="minPrice" id="minPrice" placeholder="0" value="0">
+            </div>
+
+            <div class="col-6 mb-3">
+              <label for="maxPrice">Max Price</label>
+              <input [(ngModel)]="filter.maxPrice" name="maxPrice" type="number" min="1" step="1" class="form-control" id="maxPrice" placeholder="9999">
+            </div>
+          </div>
+
+          <div class="form-group" *ngIf="categories.length > 0">
+
+            <h5>Category</h5>
+
+            <div class="form-check" *ngFor="let item of categories">
+              <input class="form-check-input" (change)="onCheckboxChange($event)" type="checkbox" value="{{item.categoryId}}" id="category-{{item.categoryId}}"/>
+              <label class="form-check-label" for="category-{{item.categoryId}}">{{item.name}}</label>
+            </div>
+
+          </div>
+
+          <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+
+      </div>
+
+    </div>
+
+    <div class="col-md-8">
+      <section>
+        <div class="container px-4 px-lg-5">
+
+          <h4 class="mb-4">{{products.length}} result(s)</h4>
+
+          <div class="row justify-content-center">
+            <div class="dish-item col-12 col-sm-6 col-md-4 mb-5" *ngFor="let product of products">
+              <app-product-item [product] = "product"> </app-product-item>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </div>
+
+</div>

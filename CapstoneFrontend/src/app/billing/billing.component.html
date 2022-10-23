@@ -1,0 +1,57 @@
+<!--<div class="container">-->
+
+<!--    <div *ngIf="bill.order.id > 0 && bill.order.userId == user.userId; then displayBill else billNotExist"></div>-->
+
+<!--    <ng-template #displayBill>-->
+<!--      <div>-->
+
+<!--        <div class="text-center">-->
+<!--          <h4 class="my-4">Bill details #{{bill.order.id}}</h4>-->
+<!--          <span><i>Ordered on: {{bill.order.orderDate}} </i></span>-->
+<!--        </div>-->
+
+<!--        <div class="card-body">-->
+
+<!--          <table class="table">-->
+
+<!--            <thead>-->
+<!--              <tr>-->
+<!--                <th scope="col">Name</th>-->
+<!--                <th scope="col">Price</th>-->
+<!--                <th scope="col">Quantity</th>-->
+<!--                <th scope="col">Sub-total</th>-->
+<!--              </tr>-->
+<!--            </thead>-->
+
+<!--            <tbody>-->
+
+<!--              <tr *ngFor="let e of bill.order_details">-->
+<!--                <th scope="row">{{e.dishName}}</th>-->
+<!--                <td>${{e.price}}</td>-->
+<!--                <td>{{e.quantity}}</td>-->
+<!--                <td>${{e.price * e.quantity}}</td>-->
+<!--              </tr>-->
+
+<!--              <tr>-->
+<!--                <td colspan="2" class="font-weight-bold">Dish(es): {{bill.order_details?.length}}</td>-->
+<!--                <td class="font-weight-bold">Units: {{getUnits(bill)}}</td>-->
+<!--                <td class="font-weight-bold">Total: ${{getTotal(bill)}}</td>-->
+<!--              </tr>-->
+<!--            </tbody>-->
+<!--          </table>-->
+
+<!--        </div>-->
+
+<!--      </div>-->
+<!--    </ng-template>-->
+
+<!--    <ng-template #billNotExist>-->
+<!--        <h4 class="text-center my-4">Bill  not found</h4>-->
+
+<!--        <div class="alert alert-danger text-center py-4 my-5">-->
+<!--          Maybe bill not exist or you dont have permission to access to this resource.-->
+<!--        </div>-->
+
+<!--    </ng-template>-->
+
+<!--</div>-->
