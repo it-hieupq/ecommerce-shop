@@ -1,0 +1,47 @@
+<section class="vh-100 my-5">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid"
+             alt="Sample image">
+      </div>
+      <div class="col-md-6 col-lg-6 col-xl-7">
+
+        <form [formGroup]="loginForm" (ngSubmit)="doLogin()">
+          <h3 class="text-center mb-3"> Login </h3>
+
+          <div class="form-outline mb-4">
+            <label class="form-label" for="username">Username</label>
+            <input formControlName="username" id="username" type="text" class="form-control form-control-lg" placeholder="Enter username" />
+          </div>
+
+          <div class="error">
+            <div class="alert-danger alert" *ngIf="username && username.errors?.['required']">
+              This field is required!
+            </div>
+          </div>
+
+          <div class="form-outline mb-3">
+            <label class="form-label" for="password">Password</label>
+            <input formControlName="password" type="password" id="password" class="form-control form-control-lg" placeholder="Enter password" />
+          </div>
+
+          <div class="error">
+            <div class="alert-danger alert" *ngIf="password && password.errors?.['required']">
+              This field is required!
+            </div>
+          </div>
+
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="submit" class="btn btn-sm btn-primary btn-lg px-5">Submit</button>
+            <p class="small fw-bold mt-2 pt-1 mb-0">
+              Don't have an account?
+              <a routerLink="/signup" class="link-danger">Register</a>
+            </p>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

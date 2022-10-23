@@ -1,0 +1,11 @@
+.tab-header{
+  padding: 10px;
+  background: #000000;
+  border-radius: 20px ;
+  margin-bottom: 12px;
+  margin-right: 12px;
+}
+.tab-header a {
+  text-decoration: none;
+  color: white;
+}
